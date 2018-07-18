@@ -102,7 +102,7 @@
 			<id>prod</id>
 			<properties>
 				<env>environment.prod</env>
-				<dirsalida>C:\SOC_JWD\app\apache-tomcat-9.0.8\webapps</dirsalida>
+				<dirsalida>C:\DGuarch\App\Tomcat\webapps</dirsalida>
 			</properties>
 		</profile>
 	</profiles>
