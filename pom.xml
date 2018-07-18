@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.estanco</groupId>
@@ -86,12 +87,33 @@
 
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<env>environment</env>
+				<dirsalida>C:\DGuarch\ExamenM3\DGuarch\m3_exam</dirsalida>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<env>environment.prod</env>
+				<dirsalida>C:\SOC_JWD\app\apache-tomcat-9.0.8\webapps</dirsalida>
+			</properties>
+		</profile>
+	</profiles>
+
 	<build>
 		<finalName>Dehumo</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
+					<outputDirectory>${dirsalida}</outputDirectory>
 					<source>1.7</source>
 					<target>1.7</target>
 				</configuration>
